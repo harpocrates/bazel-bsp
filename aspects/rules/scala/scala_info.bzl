@@ -14,7 +14,7 @@ def find_scalac_classpath(runfiles):
 
 def extract_scala_info(target, ctx, output_groups, **kwargs):
     kind = ctx.rule.kind
-    if not kind.startswith("scala_") and not kind.startswith("thrift_"):
+    if not kind.startswith("scala_") and not kind.startswith("versioned_scala_") and not kind.startswith("thrift_"):
         return None, None
 
     SCALA_TOOLCHAIN = "@io_bazel_rules_scala//scala:toolchain_type"
